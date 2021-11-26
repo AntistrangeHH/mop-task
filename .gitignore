@@ -1,0 +1,3 @@
+scraper/migrations/*
+scraper/__pycache__/*
+MOP/__pycache__/*
