@@ -1,0 +1,9 @@
+# I will separate db info into separate script, so it's easier to change db settings
+
+db_config = {
+    'name' : 'rss_feed',
+    'user' : 'postgres',
+    'password' : 'postgres',
+    'host': 'localhost',
+    'port': 5434,
+}
