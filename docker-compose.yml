@@ -1,0 +1,23 @@
+version: "3.8"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+
+# Here I should add all the services I was using, but I couldn't get this to work, partially because configuring the docker
+# on the beginning of project is way more easier for working, but I didn't know it in the beginning. 

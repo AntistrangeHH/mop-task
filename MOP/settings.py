@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import db_config
-
+from . import db_config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -83,15 +84,15 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': db_config['name'],
+        'NAME': db_config.db_config['name'],
 
-        'USER': db_config['user'],
+        'USER': db_config.db_config['user'],
 
-        'PASSWORD': db_config['password'],
+        'PASSWORD': db_config.db_config['password'],
 
-        'HOST': db_config['host'],
+        'HOST': db_config.db_config['host'],
 
-        'PORT': db_config['port'],
+        'PORT': db_config.db_config['port'],
     }
 }
 

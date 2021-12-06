@@ -14,7 +14,7 @@ app = Celery('tasks')
 
 
 @app.task
-def ScrapeData(request):
+def ScrapeData():
     count = 0
     for symbol in config.nasdaq_symbols:
 

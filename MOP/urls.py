@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from scraper.views import RssItemsView
+from scraper.tasks import ScrapeData
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rss-feed/', RssItemsView.as_view()),
+    path('', RssItemsView.as_view()),
 ]
+
+"""
+Since Urls are initialized on start of the server,
+I scrape data initially so Database has 80 initial entries 
+from scraping RSS feeds.
+"""
+ScrapeData()

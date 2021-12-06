@@ -13,4 +13,4 @@ Using postman, there are certain routes you can use to check the database of the
 On localhost:8000/rss-item/ you can send GET request to get the data from the database. 
 If celery didn't run once you can force scrape the links, running just tasks.py script. 
 Pagination is implemented and is set to 10 entries per page.
-Over the weekend I will try to dockerize the application since I am not that good with docker still.
+Over the weekend I will try to dockerize the application since I am not that good with docker still.pyth
